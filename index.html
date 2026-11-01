@@ -1,0 +1,628 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayFlow - Smart Payment Solutions</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .hero-bg {
+            background: linear-gradient(120deg, #071b49, #123d82, #0756a5);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #86efac);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .payment-card {
+            transition: all .3s ease;
+        }
+
+        .payment-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 18px 35px rgba(15, 45, 90, .13);
+        }
+
+        .scroll-animate {
+            display: flex;
+            width: max-content;
+            animation: scroll 25s linear infinite;
+        }
+
+        @keyframes scroll {
+            to { transform: translateX(-50%); }
+        }
+
+        .companiesList {
+            animation: companyScroll 12s linear infinite;
+        }
+
+        @keyframes companyScroll {
+            from { transform: translateY(0); }
+            to { transform: translateY(-50%); }
+        }
+
+        .fade-up {
+            animation: fadeUp .9s ease forwards;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(25px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: .01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-slate-800">
+
+<!-- NAVBAR -->
+<nav class="bg-white/95 backdrop-blur shadow-sm sticky top-0 z-50">
+    <div class="max-w-7xl mx-auto px-5 py-4 flex justify-between items-center">
+
+        <a href="#" class="text-2xl font-extrabold text-blue-800">
+            Pay<span class="text-green-500">Flow.</span>
+        </a>
+
+        <div class="hidden md:flex gap-7 font-medium text-sm">
+            <a href="#payments" class="hover:text-blue-600">Payments</a>
+            <a href="#banking" class="hover:text-blue-600">Banking</a>
+            <a href="#products" class="hover:text-blue-600">Products</a>
+            <a href="#features" class="hover:text-blue-600">Features</a>
+            <a href="#contact" class="hover:text-blue-600">Contact</a>
+        </div>
+
+        <div class="hidden md:flex gap-3">
+            <button class="border border-blue-700 text-blue-700 px-5 py-2 rounded-lg font-semibold hover:bg-blue-50">
+                Log In
+            </button>
+            <button class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800">
+                Get Started →
+            </button>
+        </div>
+
+        <button id="menuBtn" class="md:hidden text-blue-800">
+            <i data-feather="menu"></i>
+        </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden md:hidden px-5 pb-5 space-y-4 bg-white">
+        <a href="#payments" class="block">Payments</a>
+        <a href="#banking" class="block">Banking</a>
+        <a href="#products" class="block">Products</a>
+        <a href="#features" class="block">Features</a>
+        <a href="#contact" class="block">Contact</a>
+        <button class="bg-blue-700 text-white rounded-lg p-3 w-full">
+            Get Started
+        </button>
+    </div>
+</nav>
+
+<!-- HERO SECTION -->
+<section class="hero-bg text-white overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 py-24 grid md:grid-cols-2 gap-12 items-center">
+
+        <div class="fade-up">
+            <span class="inline-block bg-blue-400/20 text-green-300 px-4 py-2 rounded-full text-sm mb-6">
+                ✨ Smarter Payments. Bigger Possibilities.
+            </span>
+
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">
+                Simplify Your
+                <span class="gradient-text">Payments,</span>
+                Amplify Your Growth.
+            </h1>
+
+            <div class="w-16 h-1 bg-green-400 mt-7"></div>
+
+            <p class="text-blue-100 text-lg mt-7 leading-relaxed max-w-lg">
+                Manage your business payments effortlessly with
+                powerful digital solutions. Collect payments,
+                monitor transactions and grow your business
+                from one simple platform.
+            </p>
+
+            <div class="flex flex-wrap gap-4 mt-8">
+                <button class="bg-green-400 hover:bg-green-300 text-slate-900 font-bold px-7 py-4 rounded-lg transition">
+                    Start Your Journey →
+                </button>
+
+                <button class="border border-white/50 hover:bg-white/10 px-7 py-4 rounded-lg transition">
+                    Explore Solutions
+                </button>
+            </div>
+
+            <p class="text-blue-200 text-sm mt-7">
+                ✓ Easy Integration &nbsp; ✓ Smart Dashboard &nbsp; ✓ Secure Payments
+            </p>
+        </div>
+
+        <div class="flex justify-center">
+            <img
+                src="https://mohitmauryadev.github.io/Razorpay/assets/razorpay-hero-removebg-preview-B0pgCHAj.png"
+                alt="Digital payment dashboard illustration"
+                class="w-full max-w-xl hover:scale-105 transition duration-500">
+        </div>
+
+    </div>
+</section>
+
+<!-- TRUST SECTION -->
+<section class="py-12 bg-slate-50 text-center">
+    <p class="text-slate-500 font-semibold mb-8">
+        POWERING THE NEXT GENERATION OF DIGITAL BUSINESSES
+    </p>
+
+    <div class="overflow-hidden">
+        <div class="scroll-animate gap-12 items-center">
+            <span class="text-2xl font-bold text-slate-400">SHOPIFY</span>
+            <span class="text-2xl font-bold text-slate-400">ZOMATO</span>
+            <span class="text-2xl font-bold text-slate-400">SWIGGY</span>
+            <span class="text-2xl font-bold text-slate-400">NYKAA</span>
+            <span class="text-2xl font-bold text-slate-400">MAMAEARTH</span>
+            <span class="text-2xl font-bold text-slate-400">SHOPIFY</span>
+            <span class="text-2xl font-bold text-slate-400">ZOMATO</span>
+            <span class="text-2xl font-bold text-slate-400">SWIGGY</span>
+            <span class="text-2xl font-bold text-slate-400">NYKAA</span>
+            <span class="text-2xl font-bold text-slate-400">MAMAEARTH</span>
+        </div>
+    </div>
+</section>
+
+<!-- PAYMENT SECTION -->
+<section id="payments" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center mb-14">
+            <span class="text-blue-700 font-bold uppercase tracking-widest text-sm">
+                Payment Solutions
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mt-3">
+                Everything You Need to Get Paid
+            </h2>
+            <div class="w-16 h-1 bg-green-500 mx-auto mt-5"></div>
+            <p class="text-slate-500 mt-5 max-w-2xl mx-auto">
+                Discover flexible payment tools designed to make
+                every transaction simple, quick and convenient.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-blue-100 text-blue-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="link"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Smart Payment Links</h3>
+                <p class="text-slate-500 mt-3">
+                    Generate and share payment links instantly through
+                    email, WhatsApp and other platforms.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-green-100 text-green-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="credit-card"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Payment Gateway</h3>
+                <p class="text-slate-500 mt-3">
+                    Accept online payments through a smooth and
+                    user-friendly checkout experience.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-purple-100 text-purple-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="repeat"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Recurring Payments</h3>
+                <p class="text-slate-500 mt-3">
+                    Automate subscription collections and simplify
+                    regular customer billing.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-orange-100 text-orange-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="layout"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Custom Payment Pages</h3>
+                <p class="text-slate-500 mt-3">
+                    Create personalized checkout pages without
+                    complicated coding.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-pink-100 text-pink-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="mouse-pointer"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Quick Pay Buttons</h3>
+                <p class="text-slate-500 mt-3">
+                    Add convenient payment buttons to your website
+                    and make checkout easier.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+            <div class="payment-card p-8 rounded-2xl border border-slate-100 shadow-md">
+                <div class="bg-yellow-100 text-yellow-700 w-14 h-14 flex items-center justify-center rounded-xl">
+                    <i data-feather="grid"></i>
+                </div>
+                <h3 class="text-xl font-bold mt-6">Instant QR Payments</h3>
+                <p class="text-slate-500 mt-3">
+                    Enable quick and convenient digital payments
+                    using dynamic and static QR codes.
+                </p>
+                <a href="#" class="inline-block text-blue-700 font-bold mt-6">Discover More →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- BANKING SECTION -->
+<section id="banking" class="py-24 bg-blue-50 px-5">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+
+        <div>
+            <span class="text-blue-700 font-bold tracking-widest text-sm">
+                BUSINESS BANKING
+            </span>
+
+            <h2 class="text-3xl md:text-5xl font-extrabold mt-4 leading-tight">
+                Take Control of Your
+                <span class="text-blue-700">Business Finance.</span>
+            </h2>
+
+            <p class="text-slate-600 mt-6 text-lg leading-relaxed">
+                Bring your financial operations together with
+                intelligent banking tools. Manage transactions,
+                track expenses and make better business decisions.
+            </p>
+
+            <div class="space-y-5 mt-8">
+                <div class="flex gap-3 items-center">
+                    <i data-feather="check-circle" class="text-green-600"></i>
+                    <span>Manage business accounts digitally</span>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <i data-feather="check-circle" class="text-green-600"></i>
+                    <span>Track expenses and transactions</span>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <i data-feather="check-circle" class="text-green-600"></i>
+                    <span>Organize business payouts</span>
+                </div>
+                <div class="flex gap-3 items-center">
+                    <i data-feather="check-circle" class="text-green-600"></i>
+                    <span>Access financial insights in one place</span>
+                </div>
+            </div>
+
+            <button class="bg-blue-700 hover:bg-blue-800 text-white font-bold px-7 py-4 rounded-lg mt-9">
+                Explore Banking →
+            </button>
+        </div>
+
+        <div>
+            <img src="./images/razor_transaction-DcHOgooB.png"
+                alt="Business banking dashboard"
+                class="w-full rounded-2xl shadow-2xl">
+        </div>
+
+    </div>
+</section>
+
+<!-- PRODUCTS SECTION -->
+<section id="products" class="py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="mb-14 text-center">
+            <span class="text-blue-700 font-bold tracking-widest text-sm">
+                INNOVATION & TECHNOLOGY
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mt-3">
+                Explore Our Latest Solutions
+            </h2>
+            <p class="text-slate-500 mt-4">
+                Smart tools to help your business move forward.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="briefcase" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Corporate Expense Tools</h3>
+                <p class="text-slate-500 mt-3">
+                    Monitor company spending and organize team expenses
+                    with smarter financial tools.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="bar-chart-2" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Business Analytics</h3>
+                <p class="text-slate-500 mt-3">
+                    Understand business performance through
+                    meaningful financial reports and insights.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="globe" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Global Payments</h3>
+                <p class="text-slate-500 mt-3">
+                    Simplify international payment workflows
+                    and reach customers across markets.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="shield" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Payment Security</h3>
+                <p class="text-slate-500 mt-3">
+                    Support safer transactions with modern
+                    security and fraud monitoring solutions.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="smartphone" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Digital Experience</h3>
+                <p class="text-slate-500 mt-3">
+                    Deliver smooth payment experiences across
+                    mobile devices and desktop platforms.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+            <div class="payment-card bg-slate-50 rounded-2xl p-8">
+                <i data-feather="code" class="text-blue-700 w-10 h-10"></i>
+                <h3 class="text-xl font-bold mt-6">Developer APIs</h3>
+                <p class="text-slate-500 mt-3">
+                    Connect payment services with your applications
+                    through developer-friendly integrations.
+                </p>
+                <a href="#" class="text-blue-700 font-bold inline-block mt-5">Learn More →</a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FEATURES SECTION -->
+<section id="features" class="bg-[#081c45] text-white py-24 px-5">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="text-center">
+            <span class="text-green-300 font-bold tracking-widest text-sm">
+                WHY CHOOSE US
+            </span>
+            <h2 class="text-3xl md:text-4xl font-extrabold mt-4">
+                Technology That Works For You
+            </h2>
+            <p class="text-blue-200 mt-5 max-w-2xl mx-auto">
+                Powerful features, reliable technology and
+                simple tools to support your business journey.
+            </p>
+        </div>
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 mt-16">
+
+            <div>
+                <i data-feather="zap" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Quick Activation</h3>
+                <p class="text-blue-200 mt-3">
+                    Get started with a simple digital onboarding process.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="settings" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Easy Integration</h3>
+                <p class="text-blue-200 mt-3">
+                    Connect your website and applications with ease.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="code" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Developer Friendly</h3>
+                <p class="text-blue-200 mt-3">
+                    Build customized payment experiences using APIs.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="credit-card" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Flexible Payments</h3>
+                <p class="text-blue-200 mt-3">
+                    Support different payment options for customers.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="activity" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Live Analytics</h3>
+                <p class="text-blue-200 mt-3">
+                    View transaction activity and business insights.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="lock" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Secure Platform</h3>
+                <p class="text-blue-200 mt-3">
+                    Designed with security-focused payment workflows.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="dollar-sign" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Clear Pricing</h3>
+                <p class="text-blue-200 mt-3">
+                    Explore payment solutions with transparent pricing.
+                </p>
+            </div>
+
+            <div>
+                <i data-feather="headphones" class="text-green-300 w-10 h-10"></i>
+                <h3 class="font-bold text-xl mt-5">Customer Support</h3>
+                <p class="text-blue-200 mt-3">
+                    Get assistance when you need help with your platform.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="py-24 px-5 bg-slate-50">
+    <div class="max-w-5xl mx-auto text-center">
+
+        <span class="text-blue-700 font-bold tracking-widest text-sm">
+            CUSTOMER STORIES
+        </span>
+
+        <h2 class="text-3xl md:text-4xl font-extrabold mt-4">
+            Built Around Better Experiences
+        </h2>
+
+        <div class="bg-white shadow-xl rounded-2xl p-10 mt-12">
+            <div class="text-yellow-400 text-3xl mb-5">★★★★★</div>
+
+            <p class="text-xl md:text-2xl text-slate-700 leading-relaxed">
+                "A simple payment experience can make a big
+                difference. The right digital tools help businesses
+                save time and focus on what matters most."
+            </p>
+
+            <div class="mt-8">
+                <h3 class="font-bold text-lg">Business Customer</h3>
+                <p class="text-slate-500 text-sm">Customer Experience</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="py-20 px-5">
+    <div class="max-w-6xl mx-auto bg-gradient-to-r from-blue-800 to-indigo-700 text-white rounded-3xl p-10 md:p-16 text-center">
+
+        <h2 class="text-3xl md:text-5xl font-extrabold">
+            Ready to Transform Your Business?
+        </h2>
+
+        <p class="text-blue-100 mt-6 max-w-2xl mx-auto text-lg">
+            Take the next step towards smarter digital payments.
+            Discover the tools that can help your business grow.
+        </p>
+
+        <button class="bg-green-400 text-slate-900 font-bold px-9 py-4 rounded-lg mt-9 hover:bg-green-300 transition">
+            Get Started Today →
+        </button>
+
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="bg-[#07152f] text-slate-300 pt-16 pb-8 px-5">
+    <div class="max-w-7xl mx-auto">
+
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-12">
+
+            <div>
+                <h2 class="text-3xl font-extrabold text-white">
+                    Pay<span class="text-green-400">Flow.</span>
+                </h2>
+                <p class="text-slate-400 mt-5 leading-relaxed">
+                    Making digital payments simpler,
+                    smarter and more accessible for modern businesses.
+                </p>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-5">SOLUTIONS</h3>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="#payments" class="hover:text-white">Payment Gateway</a></li>
+                    <li><a href="#payments" class="hover:text-white">Payment Links</a></li>
+                    <li><a href="#banking" class="hover:text-white">Business Banking</a></li>
+                    <li><a href="#products" class="hover:text-white">Digital Products</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-5">COMPANY</h3>
+                <ul class="space-y-3 text-slate-400">
+                    <li><a href="#" class="hover:text-white">About Us</a></li>
+                    <li><a href="#" class="hover:text-white">Our Services</a></li>
+                    <li><a href="#" class="hover:text-white">Careers</a></li>
+                    <li><a href="#contact" class="hover:text-white">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-white mb-5">FOLLOW US</h3>
+                <div class="flex gap-5">
+                    <a href="#" aria-label="Facebook"><i data-feather="facebook"></i></a>
+                    <a href="#" aria-label="Instagram"><i data-feather="instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i data-feather="linkedin"></i></a>
+                    <a href="#" aria-label="Twitter"><i data-feather="twitter"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-slate-700 mt-14 pt-7 text-center text-sm text-slate-500">
+            © 2026 PayFlow. All Rights Reserved.
+            <p class="mt-2">Designed with creativity and technology.</p>
+        </div>
+
+    </div>
+</footer>
+
+<script>
+    feather.replace();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+    });
+
+    document.querySelectorAll("#mobileMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+        });
+    });
+</script>
+
+</body>
+</html>
